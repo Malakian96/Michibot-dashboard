@@ -11,6 +11,12 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'discord-dark': '#23272A',
+        'discord-dark-light': '#2C2F33',
+        'discord-gray': '#99AAB5',
+        'discord-blurple': '#5865F2',
+        'discord-green': '#3BA55D',
+        'discord-red': '#ED4245',
       },
     },
   },
