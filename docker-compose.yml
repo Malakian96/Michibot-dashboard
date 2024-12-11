@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  michibot-dashboard:
+    build:
+      context: .
+      args:
+        DISCORD_CLIENT_ID: ${DISCORD_CLIENT_ID}
+        DISCORD_CLIENT_SECRET: ${DISCORD_CLIENT_SECRET}
+        NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}
+    container_name: michibot-dashboard
+    restart: always
+    environment:
+      DISCORD_CLIENT_ID: ${DISCORD_CLIENT_ID}
+      DISCORD_CLIENT_SECRET: ${DISCORD_CLIENT_SECRET}
+      NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}
+    ports:
+      - "3000:3000"
