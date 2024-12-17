@@ -1,11 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
-import axios from "axios";
 import Header from "../components/Header";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { getAvailableAudios, getGuildsByUser, playSound } from "@/services/apiService";
 
 const Home = () => {
   const [guilds, setGuilds] = useState([]);
@@ -19,45 +20,37 @@ const Home = () => {
   useEffect(() => {
     if (session) {
       const userId = session.user?.image?.split("/")[4];
-      axios.get(`http://localhost:8080/guilds/${userId}`).then((res) => {
-        setGuilds(res.data);
-      });
-
-      axios.get("http://localhost:8080/audios").then((res) => {
-        setAudios(res.data);
-      });
+      getGuildsByUser(userId as any)
+        .then(setGuilds)
+        .catch(() => {
+          toast.error("Failed to load guilds");
+        });
     }
   }, [session]);
+
+  useEffect(() => {
+    getAvailableAudios()
+      .then(setAudios)
+      .catch(() => {
+        toast.error("Failed to load audios");
+      });
+  }, []);
 
   useEffect(()=>{
     setIsButtonDisabled(!selectedChannel || !selectedGuild)
   },[selectedChannel, selectedGuild])
 
   const handlePlaySound = async (audio: string) => {
-    if (isButtonDisabled) return; // Evita ejecutar la función si el botón está deshabilitado.
-    setIsButtonDisabled(true); // Desactiva el botón.
+    if (isButtonDisabled) return;
 
+    setIsButtonDisabled(true);
     try {
-      await axios
-        .post("http://localhost:8080/play", {
-          guildId: selectedGuild,
-          channelId: selectedChannel,
-          sound: audio,
-        })
-        .catch();
-      toast.success("Sound is playing!", {
-        position: "bottom-left",
-        autoClose: 3000,
-      });
-    } catch (error) {
-      toast.error("Failed to play the sound. Try again!", {
-        position: "bottom-left",
-        autoClose: 3000,
-      });
-      console.error("Error playing sound:", error);
+      await playSound(selectedGuild, selectedChannel, audio);
+      toast.success("Sound is playing!", { position: "bottom-left" });
+    } catch (e) {
+      toast.error(`Failed to play sound! ${e}`, { position: "bottom-left" });
     } finally {
-      // Reactiva el botón después de 1 segundo.
-      setTimeout(() => setIsButtonDisabled(false), 4000);
+      setTimeout(() => setIsButtonDisabled(false), 1000);
     }
   };
 
