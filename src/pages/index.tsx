@@ -8,7 +8,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
-  const { data: _, status } = useSession();
+  const { status } = useSession();
   const router = useRouter();
 
   useEffect(() => {
