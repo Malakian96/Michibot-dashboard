@@ -8,12 +8,12 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
-  const { data: session, status } = useSession();
+  const { data: _, status } = useSession();
   const router = useRouter();
 
   useEffect(() => {
     if (status === "authenticated") {
-      router.push("/play"); // Redirect to /something if logged in
+      router.push("/play");
     }
   }, [status, router]);
 
