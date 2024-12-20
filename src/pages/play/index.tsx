@@ -1,4 +1,3 @@
-/* Test.tsx */
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import Header from "../../components/Header";
@@ -26,7 +25,7 @@ const Play = () => {
     }
     if (session) {
       const userId = session.user?.image?.split("/")[4];
-      getGuildsByUser(userId as any)
+      getGuildsByUser(userId as string)
         .then(setGuilds)
         .catch(() => {
           toast.error("Failed to load guilds");
