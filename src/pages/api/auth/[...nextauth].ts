@@ -15,14 +15,13 @@ export default NextAuth({
     }),
   ],
   callbacks: {
-    async session({ session, token }: any) {
-      // Add Discord user ID to the session object
-      session.user.id = token.sub; // The `sub` property contains the Discord user ID
+    async session({ session, token }) {
+      session.user.id = token.sub;
       return session;
     },
     async jwt({ token, account }) {
       if (account) {
-        token.sub = account.providerAccountId; // Save Discord user ID in the token
+        token.sub = account.providerAccountId;
       }
       return token;
     },
