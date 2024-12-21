@@ -1,21 +1,43 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import GuildSelector from "./GuildSelector";
 import ChannelSelector from "./ChannelSelector";
 import SoundBoard from "./Soundboard";
+export interface Guild {
+  guildId: string;
+  guildName: string;
+  voiceChannels: Channel[];
+}
 
+export interface Channel {
+  id: string;
+  name: string;
+}
+
+interface MainProps {
+  guilds: Guild[];
+  selectedGuild: string;
+  setSelectedGuild: (guild: string) => void;
+  channels: Channel[];
+  setChannels: (channels: Channel[]) => void;
+  selectedChannel: string | null;
+  setSelectedChannel: (channel: string) => void;
+  handlePlaySound: (audio: string) => void;
+  isButtonDisabled: boolean;
+  audios: string[];
+}
 const Main = ({
   guilds,
   selectedGuild,
   setSelectedGuild,
   channels,
   setChannels,
-  selectedChannel,
+  selectedChannel = "",
   setSelectedChannel,
   handlePlaySound,
   isButtonDisabled,
   audios,
-}: any) => {
+}: MainProps) => {
   return (
+
     <div className="mt-6">
       <div className="flex justify-around flex-wrap gap-5">
         <GuildSelector
@@ -26,7 +48,7 @@ const Main = ({
         />
         <ChannelSelector
           channels={channels}
-          selectedChannel={selectedChannel}
+          selectedChannel={selectedChannel ?? ""}
           setSelectedChannel={setSelectedChannel}
         />
       </div>

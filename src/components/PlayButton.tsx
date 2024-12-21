@@ -1,5 +1,11 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-const PlayButton = ({ selectedGuild, selectedChannel, handlePlaySound, disabled }: any) => {
+interface PlayButtonProps {
+  selectedGuild: string | null;
+  selectedChannel: string | null;
+  handlePlaySound: () => void;
+  disabled: boolean;
+}
+
+const PlayButton = ({ selectedGuild, selectedChannel, handlePlaySound, disabled }: PlayButtonProps) => {
     return (
       <button
         onClick={handlePlaySound}

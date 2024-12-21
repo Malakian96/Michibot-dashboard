@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import Header from "../../components/Header";
-import Main from "../../components/Main";
+import Main, { Channel } from "../../components/Main";
 import Footer from "../../components/Footer";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -11,7 +11,7 @@ import { useRouter } from 'next/router';
 const Play = () => {
   const [guilds, setGuilds] = useState([]);
   const [selectedGuild, setSelectedGuild] = useState("");
-  const [channels, setChannels] = useState([]);
+  const [channels, setChannels] = useState<Channel[]>([]);
   const [audios, setAudios] = useState<string[]>([]);
   const [selectedChannel, setSelectedChannel] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
