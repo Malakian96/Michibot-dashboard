@@ -14,4 +14,17 @@ export default NextAuth({
       authorization: { params: { scope: scopes, redirect_uri: uri } },
     }),
   ],
+  callbacks: {
+    async session({ session, token }: any) {
+      // Add Discord user ID to the session object
+      session.user.id = token.sub; // The `sub` property contains the Discord user ID
+      return session;
+    },
+    async jwt({ token, account }) {
+      if (account) {
+        token.sub = account.providerAccountId; // Save Discord user ID in the token
+      }
+      return token;
+    },
+  },
 })

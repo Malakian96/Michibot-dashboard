@@ -23,9 +23,8 @@ const Play = () => {
     if(session === null){
         router.push('/');
     }
-    if (session) {
-      const userId = session.user?.image?.split("/")[4];
-      getGuildsByUser(userId as string)
+    if (session && session.user.id) {
+      getGuildsByUser(session.user.id)
         .then(setGuilds)
         .catch(() => {
           toast.error("Failed to load guilds");
