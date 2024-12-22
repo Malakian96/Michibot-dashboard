@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { signIn, signOut, useSession } from "next-auth/react";
+import Image from 'next/image';
+import { signIn, signOut, useSession } from 'next-auth/react';
 
 const Header = () => {
   const { data: session } = useSession();
@@ -28,7 +28,7 @@ const Header = () => {
       ) : (
         <button
           className="bg-discord-green text-white px-4 py-2 rounded-md hover:bg-opacity-90"
-          onClick={() => signIn("discord")}
+          onClick={() => signIn('discord')}
         >
           Sign In
         </button>

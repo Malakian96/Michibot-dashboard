@@ -1,6 +1,6 @@
-import GuildSelector from "./GuildSelector";
-import ChannelSelector from "./ChannelSelector";
-import SoundBoard from "./Soundboard";
+import GuildSelector from './GuildSelector';
+import ChannelSelector from './ChannelSelector';
+import SoundBoard from './Soundboard';
 export interface Guild {
   guildId: string;
   guildName: string;
@@ -30,14 +30,13 @@ const Main = ({
   setSelectedGuild,
   channels,
   setChannels,
-  selectedChannel = "",
+  selectedChannel = '',
   setSelectedChannel,
   handlePlaySound,
   isButtonDisabled,
   audios,
 }: MainProps) => {
   return (
-
     <div className="mt-6">
       <div className="flex justify-around flex-wrap gap-5">
         <GuildSelector
@@ -48,7 +47,7 @@ const Main = ({
         />
         <ChannelSelector
           channels={channels}
-          selectedChannel={selectedChannel ?? ""}
+          selectedChannel={selectedChannel ?? ''}
           setSelectedChannel={setSelectedChannel}
         />
       </div>

@@ -1,4 +1,4 @@
-import { Channel, Guild } from "./Main";
+import { Channel, Guild } from './Main';
 
 interface GuildSelectorProps {
   guilds: Guild[];
@@ -7,13 +7,17 @@ interface GuildSelectorProps {
   setChannels: (channels: Channel[]) => void;
 }
 
-const GuildSelector = ({ guilds, selectedGuild, setSelectedGuild, setChannels }: GuildSelectorProps) => {
-
+const GuildSelector = ({
+  guilds,
+  selectedGuild,
+  setSelectedGuild,
+  setChannels,
+}: GuildSelectorProps) => {
   const handleGuildChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const guildId = e.target.value;
     setSelectedGuild(guildId);
     const selectedGuild = guilds.find(
-      (guild: Guild) => guild.guildId === guildId
+      (guild: Guild) => guild.guildId === guildId,
     );
     setChannels(selectedGuild ? selectedGuild.voiceChannels : []);
   };

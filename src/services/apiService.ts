@@ -1,4 +1,4 @@
-import axiosInstance from "./axiosInstance";
+import axiosInstance from './axiosInstance';
 
 // Obtiene las guilds del usuario
 export const getGuildsByUser = async (userId: string) => {
@@ -22,7 +22,7 @@ export const getAvailableAudios = async () => {
 export const playSound = async (
   guildId: string,
   channelId: string,
-  sound: string
+  sound: string,
 ) => {
   const response = await axiosInstance.post(`/play`, {
     guildId,
