@@ -1,40 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GuildSelectorSnapshot matches snapshot 1`] = `
-<div>
-  <header
-    class="w-full p-4 bg-discord-dark-light flex justify-between items-center shadow-md"
-  >
-    <h1
-      class="text-xl font-bold text-discord-blurple"
-    >
-      Michibot
-    </h1>
-    <div
-      class="flex items-center gap-4"
-    >
-      <img
-        alt="User avatar"
-        class="rounded-full"
-        data-nimg="1"
-        decoding="async"
-        height="38"
-        loading="lazy"
-        src="/_next/image?url=https%3A%2F%2Fexample.com%2Favatar.jpg&w=96&q=75"
-        srcset="/_next/image?url=https%3A%2F%2Fexample.com%2Favatar.jpg&w=48&q=75 1x, /_next/image?url=https%3A%2F%2Fexample.com%2Favatar.jpg&w=96&q=75 2x"
-        style="color: transparent;"
-        width="38"
-      />
-      <button
-        class="bg-discord-red text-white px-4 py-2 rounded-md hover:bg-opacity-90"
-      >
-        Sign Out
-      </button>
-    </div>
-  </header>
-</div>
-`;
-
 exports[`HeaderSnapshot matches snapshot 1`] = `
 <div>
   <header
