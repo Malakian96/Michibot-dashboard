@@ -1,33 +1,36 @@
-import { useState, useEffect } from "react";
-import { useSession } from "next-auth/react";
-import Header from "../../components/Header";
-import Main from "../../components/Main";
-import Footer from "../../components/Footer";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { getAvailableAudios, getGuildsByUser, playSound } from "@/services/apiService";
+import { useState, useEffect } from 'react';
+import { useSession } from 'next-auth/react';
+import Header from '@components/Header';
+import Main, { Channel } from '@components/Main';
+import Footer from '@components/Footer';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {
+  getAvailableAudios,
+  getGuildsByUser,
+  playSound,
+} from '@/services/apiService';
 import { useRouter } from 'next/router';
 
 const Play = () => {
   const [guilds, setGuilds] = useState([]);
-  const [selectedGuild, setSelectedGuild] = useState("");
-  const [channels, setChannels] = useState([]);
+  const [selectedGuild, setSelectedGuild] = useState('');
+  const [channels, setChannels] = useState<Channel[]>([]);
   const [audios, setAudios] = useState<string[]>([]);
-  const [selectedChannel, setSelectedChannel] = useState("");
+  const [selectedChannel, setSelectedChannel] = useState('');
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const { data: session } = useSession();
   const router = useRouter();
 
-
   useEffect(() => {
-    if(session === null){
-        router.push('/');
+    if (session === null) {
+      router.push('/');
     }
     if (session && session.user.id) {
       getGuildsByUser(session.user.id)
         .then(setGuilds)
         .catch(() => {
-          toast.error("Failed to load guilds");
+          toast.error('Failed to load guilds');
         });
     }
   }, [session, router]);
@@ -36,7 +39,7 @@ const Play = () => {
     getAvailableAudios()
       .then(setAudios)
       .catch(() => {
-        toast.error("Failed to load audios");
+        toast.error('Failed to load audios');
       });
   }, []);
 
@@ -50,9 +53,9 @@ const Play = () => {
     setIsButtonDisabled(true);
     try {
       await playSound(selectedGuild, selectedChannel, audio);
-      toast.success("Sound is playing!", { position: "bottom-left" });
+      toast.success('Sound is playing!', { position: 'bottom-left' });
     } catch (e) {
-      toast.error(`Failed to play sound! ${e}`, { position: "bottom-left" });
+      toast.error(`Failed to play sound! ${e}`, { position: 'bottom-left' });
     } finally {
       setTimeout(() => setIsButtonDisabled(false), 1000);
     }

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FooterSnapshot matches snapshot 1`] = `
+<div>
+  <footer
+    class="w-full p-4 bg-discord-dark-light text-center text-sm text-discord-gray"
+  >
+    © 2024 Michibot. All rights reserved.
+  </footer>
+</div>
+`;

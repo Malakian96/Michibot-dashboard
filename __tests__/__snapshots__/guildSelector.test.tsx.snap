@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GuildSelectorSnapshot matches snapshot 1`] = `
+<div>
+  <select
+    aria-label="Select a server"
+    class="bg-discord-dark-light text-white px-4 py-2 rounded-md mb-4"
+  >
+    <option
+      value=""
+    >
+      Select a server
+    </option>
+    <option
+      value="1"
+    >
+      Guild 1
+    </option>
+    <option
+      value="2"
+    >
+      Guild 2
+    </option>
+  </select>
+</div>
+`;
