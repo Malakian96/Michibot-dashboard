@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SoundBoard matches snapshot 1`] = `
+<div>
+  <div
+    class="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+  >
+    <div
+      class="flex flex-col items-center"
+    >
+      <button
+        class="w-32 h-32 rounded-md overflow-hidden hover:scale-105 transition-transform"
+        data-testid="sound-buttonaudio1.mp3"
+        style="background-image: url(https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif); background-size: cover; background-position: center;"
+      />
+      <span
+        class="text-xs text-white mt-1"
+      >
+        audio1.mp3
+      </span>
+    </div>
+    <div
+      class="flex flex-col items-center"
+    >
+      <button
+        class="w-32 h-32 rounded-md overflow-hidden hover:scale-105 transition-transform"
+        data-testid="sound-buttonaudio2.mp3"
+        style="background-image: url(https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif); background-size: cover; background-position: center;"
+      />
+      <span
+        class="text-xs text-white mt-1"
+      >
+        audio2.mp3
+      </span>
+    </div>
+  </div>
+</div>
+`;
