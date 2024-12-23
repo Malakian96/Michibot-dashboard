@@ -4,7 +4,6 @@ interface PlayButtonProps {
   handlePlaySound: () => void;
   disabled: boolean;
 }
-
 const PlayButton = ({
   selectedGuild,
   selectedChannel,

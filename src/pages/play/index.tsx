@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useSession } from 'next-auth/react';
-import Header from '../../components/Header';
-import Main, { Channel } from '../../components/Main';
-import Footer from '../../components/Footer';
+import Header from '@components/Header';
+import Main, { Channel } from '@components/Main';
+import Footer from '@components/Footer';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {

@@ -29,6 +29,7 @@ const SoundBoard: React.FC<SoundBoardProps> = ({
       {audios.map((audio, index) => (
         <div key={audio} className="flex flex-col items-center">
           <button
+            data-testid={`sound-button${audio}`}
             onClick={() => handlePlaySound(audio)}
             disabled={isButtonDisabled}
             className={`w-32 h-32 rounded-md overflow-hidden ${

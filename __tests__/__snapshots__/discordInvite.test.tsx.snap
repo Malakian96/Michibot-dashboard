@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DiscordInviteSnapshot matches snapshot 1`] = `
+<div>
+  <div
+    class="bg-discord-dark-light text-foreground max-w-md mx-auto my-10 p-6 rounded-lg shadow-lg"
+  >
+    <div
+      class="flex justify-center pb-5"
+    >
+      <img
+        alt="User avatar"
+        class="rounded-full"
+        data-nimg="1"
+        decoding="async"
+        height="100"
+        loading="lazy"
+        src="/_next/image?url=%2Fthebiter.png&w=256&q=75"
+        srcset="/_next/image?url=%2Fthebiter.png&w=128&q=75 1x, /_next/image?url=%2Fthebiter.png&w=256&q=75 2x"
+        style="color: transparent;"
+        width="100"
+      />
+    </div>
+    <h2
+      class="text-2xl font-bold text-white flex items-center justify-center"
+    >
+      Michibot
+      <span
+        class="ml-2 bg-discord-blurple text-white text-xs font-semibold px-2 py-1 rounded"
+      >
+        APP
+      </span>
+    </h2>
+    <p
+      class="text-discord-gray mt-2 text-center"
+    >
+      Añade a Michibot a tu servidor de Discord y accede a todas sus funcionalidades.
+    </p>
+    <ul
+      class="mt-4 space-y-2 text-sm text-foreground"
+    >
+      <li
+        class="flex items-center"
+      >
+        ✅ 
+        <span
+          class="ml-2"
+        >
+          Añadir un bot a un servidor
+        </span>
+      </li>
+      <li
+        class="flex items-center"
+      >
+        ✅ 
+        <span
+          class="ml-2"
+        >
+          Crear comandos
+        </span>
+      </li>
+      <li
+        class="flex items-center"
+      >
+        ❌
+         
+        <span
+          class="ml-2 text-discord-gray"
+        >
+          Tener una crisis existencial
+        </span>
+      </li>
+    </ul>
+    <div
+      class="mt-6 text-center"
+    >
+      <a
+        class="bg-discord-blurple hover:bg-discord-blurple/90 text-white font-semibold py-2 px-4 rounded shadow-md transition duration-300"
+        href="https://discord.com/oauth2/authorize?client_id=1303130781580918954&permissions=8&integration_type=0&scope=bot"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Invitar al servidor
+      </a>
+    </div>
+  </div>
+</div>
+`;

@@ -1,6 +1,6 @@
-import GuildSelector from './GuildSelector';
-import ChannelSelector from './ChannelSelector';
-import SoundBoard from './Soundboard';
+import GuildSelector from '@components/GuildSelector';
+import ChannelSelector from '@components/ChannelSelector';
+import SoundBoard from '@components/Soundboard';
 export interface Guild {
   guildId: string;
   guildName: string;

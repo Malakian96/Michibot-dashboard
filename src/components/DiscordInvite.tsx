@@ -16,7 +16,6 @@ const DiscordInvite = () => {
           className="rounded-full"
         />
       </div>
-      {/* Título */}
       <h2 className="text-2xl font-bold text-white flex items-center justify-center">
         Michibot
         <span className="ml-2 bg-discord-blurple text-white text-xs font-semibold px-2 py-1 rounded">
@@ -44,7 +43,6 @@ const DiscordInvite = () => {
         </li>
       </ul>
 
-      {/* Botón de invitación */}
       <div className="mt-6 text-center">
         <a
           href={inviteLink}

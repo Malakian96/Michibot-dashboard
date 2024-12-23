@@ -1,4 +1,4 @@
-import { Channel } from './Main';
+import { Channel } from '@components/Main';
 
 interface ChannelSelectorProps {
   channels: Channel[];

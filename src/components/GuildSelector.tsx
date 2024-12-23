@@ -1,4 +1,4 @@
-import { Channel, Guild } from './Main';
+import { Channel, Guild } from '@components/Main';
 
 interface GuildSelectorProps {
   guilds: Guild[];
@@ -27,6 +27,7 @@ const GuildSelector = ({
       value={selectedGuild}
       onChange={handleGuildChange}
       className="bg-discord-dark-light text-white px-4 py-2 rounded-md mb-4"
+      aria-label="Select a server"
     >
       <option value="">Select a server</option>
       {guilds.map((guild: Guild) => (
