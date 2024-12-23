@@ -1,22 +1,25 @@
-## Deploy on Raspberry pi
+<p align="center">
+<img src="https://avatars.githubusercontent.com/u/191388655?s=200&v=4" alt="Avatar" style="width:150px; height:150px; border-radius:50%;">
+</p>
 
-docker buildx build --platform linux/arm/v7 -t michibot-dashboard .
+# Michibot Dashboard
 
-docker save michibot-dashboard > michibot-dashboard.tar
+Michibot Dashboard is a web-based management system built with Next.js and TypeScript. It integrates with the Discord API to facilitate bot management and provides deployment support using Docker.
 
-scp michibot-dashboard.tar ${hostname}@${ip}:/home/${hostname}/
+## Features
 
-ssh ${hostname}@${ip}
+- **Discord Integration**: Connects seamlessly with Discord API for bot control.
+- **Environment Configuration**: Flexible `.env` setup for custom deployment.
+- **Docker Deployment**: Optimized for hosting, including Raspberry Pi.
+- **Responsive UI**: Built with Tailwind CSS for a modern and scalable design.
 
-docker load < /home/${hostname}/michibot-dashboard.tar
+## Installation
 
-docker stop michibot-dashboard
+<details>
+<summary>Click to expand</summary>
 
-docker rm michibot-dashboard
-
-docker run -d --name michibot-dashboard -p 80:3000 \
-  -e DISCORD_CLIENT_ID=${DISCORD_CLIENT_ID} \
-  -e DISCORD_CLIENT_SECRET=${DISCORD_CLIENT_SECRET} \
-  -e NEXTAUTH_SECRET=${NEXTAUTH_SECRET} \
-  -e NEXTAUTH_URL=${NEXTAUTH_URL} \
-  michibot-dashboard
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/MichibotV2/Michibot-dashboard.git
+   cd Michibot-dashboard
+   ```
